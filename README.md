@@ -8,22 +8,6 @@ This quickstart is set up with:
 - Typescript
 - Vue router for Single Page Application
 
-## Running locally
-
-You can run this project locally inside Docker or using rails alone.
-To use Docker, this project contains `docker-compose.yml` that runs with `RAILS_ENV=development`.
-This ensures that using Docker doesn't prohibit handy development features:
-- Assets are compiled on demand.
-- Pretty error logs are displayed in the browser.
-- Hot reload is configured so that changes to rails files doesn't require a docker rebuild or restart.
-
-To run using Docker locally, use docker compose:
-```shell
-docker compose up
-```
-
-Then, visit [http://localhost:3000](http://localhost:3000).
-
 ## How to launch via Nullstone
 
 1. Create a static site. (Remember `app-name` for later)
@@ -38,15 +22,38 @@ Then, visit [http://localhost:3000](http://localhost:3000).
   nullstone launch --source=./dist --app=<app-name> --env=<env-name>
   ```
 
+## Running locally
+
+You can run this project locally inside Docker or using a dev server.
+The docker setup is configured to hot reload; you don't have to rebuild/restart the container when you change code.
+
+### Docker
+
+NOTE: This setup requires configuring vite server to bind on `0.0.0.0`.
+
+```shell
+docker compose up
+```
+
+Visit [http://localhost:3000](http://localhost:3000).
+
+### Dev Server
+
+```shell
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000).
+
 ### Hot reload
 
-The `app` in `docker-compose.yml` is configured to automatically reload changes to files.
+The `app` in `docker-compose.yml` is configured to automatically reload changes to code.
 You do not need to rebuild/restart the app when making changes to code.
 
 ### Update dependencies
 
-To make changes to dependencies, make changes to `Gemfile` and restart your docker container.
-`bundle install` happens automatically at the boot of the docker container to update dependencies.
+To make changes to dependencies, make changes to `package.json` and restart your docker container.
+`npm install` happens automatically at the boot of the docker container to update dependencies.
 
 ```shell
 docker compose restart app
@@ -57,3 +64,4 @@ docker compose restart app
 This static site was generated following these steps.
 1. `npm init vue .`
 2. `npm install`
+3. Configure `package.json` to serve on `0.0.0.0` (necessary for Docker setup)
