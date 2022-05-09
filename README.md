@@ -65,3 +65,7 @@ This static site was generated following these steps.
 1. `npm init vue .`
 2. `npm install`
 3. Configure `package.json` to serve on `0.0.0.0` (necessary for Docker setup)
+  ```json
+  "scripts": {
+    "dev": "vite --host=0.0.0.0",
+  ```
