@@ -13,4 +13,4 @@ services:
       - NODE_ENV=development
 
 volumes:
-  node_modules:
+  node_modules: {}
