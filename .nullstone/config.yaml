@@ -1,0 +1,23 @@
+version: "0.1"
+
+subdomains:
+  vue-subdomain:
+    module: nullstone/aws-autogen-subdomain
+
+apps:
+  aspnet:
+    module: nullstone/aws-s3-site
+    vars:
+      enable_versioned_assets: true
+      env_vars_filename: "env.json"
+    capabilities:
+      - module: nullstone/aws-s3-cdn
+        vars:
+          enable_www: false
+          default_document: "index.html"
+          notfound_behavior:
+            enabled: true
+            spa_mode: true
+            document: "404.html"
+        connections:
+          subdomain: vue-subdomain
