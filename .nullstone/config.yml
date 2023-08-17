@@ -2,7 +2,7 @@ version: "0.1"
 
 subdomains:
   vue-subdomain:
-    module: nullstone/aws-autogen-subdomain
+    module: nullstone/autogen-aws-subdomain
 
 apps:
   vue-quickstart:
