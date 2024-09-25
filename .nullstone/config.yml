@@ -10,11 +10,11 @@ apps:
     vars:
       enable_versioned_assets: true
       env_vars_filename: "env.json"
+    environment:
+      TEST: 'value'
+      ANOTHER: 'value1'
     capabilities:
       - module: nullstone/aws-s3-cdn
-        environment:
-          TEST: 'value'
-          ANOTHER: 'value1'
         vars:
           enable_www: false
           default_document: "index.html"
