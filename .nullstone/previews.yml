@@ -3,4 +3,4 @@ version: "0.1"
 apps:
   vue-quickstart:
     environment:
-      TEST: 'srsly?'
+      TEST: 'srsly'
