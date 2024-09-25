@@ -14,7 +14,7 @@ apps:
       - module: nullstone/aws-s3-cdn
         environment:
           TEST: 'value'
-          ANOTHER: 'value2'
+          ANOTHER: 'value3'
         vars:
           enable_www: false
           default_document: "index.html"
