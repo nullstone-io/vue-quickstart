@@ -1,5 +1,17 @@
 version: "0.1"
 
+events:
+  deployments:
+    actions:
+      - app-deployed
+      - block-needs-approval
+    blocks:
+      - vue-quickstart
+    targets:
+      slack:
+        channels:
+          - random
+
 subdomains:
   vue-subdomain:
     module: nullstone/autogen-aws-subdomain
