@@ -21,3 +21,4 @@ apps:
             document: "404.html"
         connections:
           subdomain: vue-subdomain
+
